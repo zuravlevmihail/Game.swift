@@ -20,3 +20,16 @@
 
     // Объект игрока
     const player = {
+      x: 50,
+      y: 50,
+      width: 30,
+      height: 30,
+      color: 'blue',
+      speed: 5
+    };
+
+    // Функция отрисовки игрока
+    function drawPlayer() {
+      ctx.fillStyle = player.color;
+      ctx.fillRect(player.x, player.y, player.width, player.height);
+    }
