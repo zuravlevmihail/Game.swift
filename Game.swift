@@ -33,3 +33,36 @@
       ctx.fillStyle = player.color;
       ctx.fillRect(player.x, player.y, player.width, player.height);
     }
+
+    // Функция обновления игры
+    function update() {
+      // Обработка ввода
+      window.addEventListener('keydown', (event) => {
+        switch (event.key) {
+          case 'ArrowUp':
+            player.y -= player.speed;
+            break;
+          case 'ArrowDown':
+            player.y += player.speed;
+            break;
+          case 'ArrowLeft':
+            player.x -= player.speed;
+            break;
+          case 'ArrowRight':
+            player.x += player.speed;
+            break;
+        }
+      });
+
+      // Отрисовка игрока
+      drawPlayer();
+
+      // Рекурсивный вызов функции update для обновления игры
+      requestAnimationFrame(update);
+    }
+
+    // Начало игры
+    update();
+  </script>
+</body>
+</html>
